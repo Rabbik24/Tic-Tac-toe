@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #01fafa; /* Dark background */
+    color: #fffdfd; /* White text */
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #f5ba13; /* Vibrant yellow for heading */
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 10px;
+    margin-bottom: 20px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #1f1f1f; /* Dark cells */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: transparent;
+    cursor: pointer;
+    transition: transform 0.2s, color 0.3s;
+    border: 2px solid #333;
+    position: relative;
+}
+
+.cell:hover {
+    transform: scale(1.1); /* Scale-up on hover */
+    border-color: #f5ba13; /* Border glow effect */
+}
+
+.cell.active-X {
+    color: #ff4757; /* Vibrant red for X */
+    text-shadow: 0 0 10px rgba(255, 71, 87, 0.8);
+}
+
+.cell.active-O {
+    color: #1e90ff; /* Vibrant blue for O */
+    text-shadow: 0 0 10px rgba(30, 144, 255, 0.8);
+}
+
+button {
+    background-color: #f5ba13; /* Vibrant yellow button */
+    color: #121212;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #e1a409;
+    transform: scale(1.1); /* Button scale-up effect */
+}
+
+#statusMessage {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #fff; /* Status message white */
+}
+
+.cell.win {
+    background-color: #00ff00; /* Green background for winning cells */
+    animation: glow 1s infinite alternate; /* Glowing animation */
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 5px #00ff00;
+    }
+    to {
+        box-shadow: 0 0 20px #00ff00;
+    }
+}
